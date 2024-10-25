@@ -22,9 +22,9 @@
 
   <label for="ticket">Wybierz typ biletu:</label><br />
   <select id="ticket" name="ticket" formControlName="ticketType">
-    <option value="Standard">Standardowy</option>
+    <option value="Standardowy">Standardowy</option>
     <option value="VIP">VIP</option>
-    <option value="Student">Studencki</option></select
+    <option value="Studencki">Studencki</option></select
   ><br /><br />
 
   <label>Chcesz uczestniczyć w warsztatach?</label><br />
@@ -45,6 +45,16 @@
   />
   <label for="no">Nie</label><br />
   <br />
+
+  <label for="description">Dodatkowe uwagi:</label><br />
+  <textarea
+    id="description"
+    name="description"
+    rows="5"
+    cols="40"
+    formControlName="description"
+  ></textarea
+  ><br />
 
   <input type="checkbox" id="terms" name="terms" formControlName="tosConsent" />
   <label for="terms">Akceptuję regulamin i politykę prywatności</label><br />

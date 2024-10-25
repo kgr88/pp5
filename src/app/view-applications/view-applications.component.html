@@ -1,5 +1,5 @@
 <div>
-  <h1>Uczestnicy:</h1>
+  <h1>Uczestnicy:</h1> <button (click)="fetchForms('participant')" class="fetch-button">Wygeneruj formularz</button> <br />
   @for (person of participantForms; track person.firstName){
   <form class="form">
     <input
@@ -47,10 +47,23 @@
       checked
     />
     <label for="yes">{{ person.workshopAttendance }}</label
+    ><br /><br />
+
+    <label for="description">Dodatkowe uwagi:</label><br />
+    <textarea
+      id="description"
+      name="description"
+      rows="5"
+      cols="40"
+      formControlName="description"
+      [value]="person.description"
+      readonly
+    ></textarea
     ><br />
   </form>
-  <h1>Prelegenci:</h1>
-  } @for (speaker of speakerForms; track speaker.firstName){
+  }
+  <h1>Prelegenci:</h1> <button (click)="fetchForms('speaker')" class="fetch-button">Wygeneruj formularz</button> <br />
+  @for (speaker of speakerForms; track speaker.firstName){
   <form class="form">
     <input
       type="text"
@@ -101,12 +114,13 @@
       cols="40"
       formControlName="description"
       [value]="speaker.description"
+      readonly
     ></textarea
     ><br />
   </form>
   }
-  
-  <h1>Sponsorzy:</h1>
+
+  <h1>Sponsorzy:</h1> <button (click)="fetchForms('sponsor')" class="fetch-button">Wygeneruj formularz</button> <br />
   @for (sponsor of sponsorForms; track sponsor.companyName){
   <form class="form">
     <input
@@ -115,6 +129,7 @@
       formControlName="companyName"
       placeholder="Nazwa firmy"
       [value]="sponsor.companyName"
+      readonly
     /><br />
 
     <input
@@ -123,6 +138,7 @@
       formControlName="email"
       placeholder="Adres e-mail"
       [value]="sponsor.email"
+      readonly
     /><br /><br />
 
     <label for="promotion">Preferowany sposób promocji:</label><br />
@@ -142,6 +158,7 @@
       max="3"
       formControlName="promotionTime"
       [value]="sponsor.promotionTime"
+      readonly
     /><br /><br />
     <label for="description">Dodatkowe uwagi:</label><br />
 
@@ -152,6 +169,7 @@
       cols="40"
       formControlName="description"
       [value]="sponsor.description"
+      readonly
     ></textarea
     ><br />
   </form>

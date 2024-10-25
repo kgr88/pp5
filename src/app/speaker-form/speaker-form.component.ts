@@ -21,14 +21,14 @@ export class SpeakerFormComponent {
     tosConsent: new FormControl('', Validators.required),
   });
  
-  handleSubmit() {
+  handleSubmit(): void {
     if (!this.speakerForm.valid) {
       console.log(this.speakerForm, this.speakerForm.valid)
       alert('Wypełnij wszystkie pola!');
       return;
     }
-    const formData = this.speakerForm.value;
-    const speakerForms = JSON.parse(
+    const formData: any = this.speakerForm.value;
+    const speakerForms: any = JSON.parse(
       localStorage.getItem('speakerForms') || '[]'
     );
     speakerForms.push(formData);

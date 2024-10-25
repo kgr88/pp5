@@ -17,15 +17,16 @@ export class ParticipantFormComponent {
     ticketType: new FormControl('', Validators.required),
     workshopAttendance: new FormControl('Nie', Validators.required),
     tosConsent: new FormControl('', Validators.required),
+    description: new FormControl(''),
   });
 
-  handleSubmit() {
+  handleSubmit():void {
     if (!this.participantForm.valid) {
       alert('Wypełnij wszystkie pola!');
       return;
     }
-    const formData = this.participantForm.value;
-    const participantForms = JSON.parse(
+    const formData: any = this.participantForm.value;
+    const participantForms: any = JSON.parse(
       localStorage.getItem('participantForms') || '[]'
     );
     participantForms.push(formData);
