@@ -24,7 +24,7 @@ export class SpeakerFormComponent {
   handleSubmit(): void {
     if (!this.speakerForm.valid) {
       console.log(this.speakerForm, this.speakerForm.valid)
-      alert('Wypełnij wszystkie pola!');
+      alert('Wypełnij poprawnie wszystkie pola!');
       return;
     }
     const formData: any = this.speakerForm.value;

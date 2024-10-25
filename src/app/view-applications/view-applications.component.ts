@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { API_KEYS } from '../../config';
 
 @Component({
   selector: 'app-view-applications',
@@ -35,15 +34,15 @@ export class ViewApplicationsComponent {
 
     switch (formType) {
       case 'participant':
-        apiUrl = `https://api.mockaroo.com/api/4703ec90?count=1&key=${API_KEYS.MOCKAROO}`;
+        apiUrl = `https://api.mockaroo.com/api/4703ec90?count=1&key=e2aead50`;
         storageKey = 'participantForms';
         break;
       case 'speaker':
-        apiUrl = `https://api.mockaroo.com/api/d1d0fa30?count=1&key=${API_KEYS.MOCKAROO}`;
+        apiUrl = `https://api.mockaroo.com/api/d1d0fa30?count=1&key=e2aead50`;
         storageKey = 'speakerForms';
         break;
       case 'sponsor':
-        apiUrl = `https://api.mockaroo.com/api/ca4bc540?count=1&key=${API_KEYS.MOCKAROO}`;
+        apiUrl = `https://api.mockaroo.com/api/ca4bc540?count=1&key=e2aead50`;
         storageKey = 'sponsorForms';
         break;
       default:

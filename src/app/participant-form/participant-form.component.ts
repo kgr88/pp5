@@ -22,7 +22,7 @@ export class ParticipantFormComponent {
 
   handleSubmit():void {
     if (!this.participantForm.valid) {
-      alert('Wypełnij wszystkie pola!');
+      alert('Wypełnij poprawnie wszystkie pola!');
       return;
     }
     const formData: any = this.participantForm.value;

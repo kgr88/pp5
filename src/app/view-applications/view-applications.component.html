@@ -1,177 +1,115 @@
 <div>
-  <h1>Uczestnicy:</h1> <button (click)="fetchForms('participant')" class="fetch-button">Wygeneruj formularz</button> <br />
+  <h1>Uczestnicy:</h1>
+  <button (click)="fetchForms('participant')" class="fetch-button">
+    Wygeneruj formularz
+  </button>
+  <br />
   @for (person of participantForms; track person.firstName){
-  <form class="form">
-    <input
-      type="text"
-      id="name"
-      formControlName="firstName"
-      placeholder="Imię"
-      [value]="person.firstName"
-      readonly
-    /><br />
-
-    <input
-      type="text"
-      id="name"
-      formControlName="lastName"
-      [value]="person.lastName"
-      readonly
-    /><br />
-
-    <input
-      type="email"
-      id="email"
-      formControlName="email"
-      placeholder="Adres e-mail"
-      [value]="person.email"
-      readonly
-    /><br />
+  <div class="form">
+    <div>
+      Imię:<br />
+      <div class="saved-form-input">{{ person.firstName }}</div>
+    </div>
     <br />
+    <div>
+      Nazwisko:<br />
+      <div class="saved-form-input">{{ person.lastName }}</div>
+    </div>
+    <br />
+    <div>
+      Adres e-mail:<br />
+      <div class="saved-form-input">{{ person.email }}</div>
+    </div>
+    <br />
+    <div>
+      Typ biletu:<br />
+      <div>{{ person.ticketType }}</div>
+      <br />
+    </div>
 
-    <label for="ticket">Typ biletu:</label><br />
-    <select id="ticket" name="ticket" formControlName="ticketType">
-      <option [value]="person.ticketType">
-        {{ person.ticketType }}
-      </option></select
-    ><br /><br />
-
-    <label>Uczestnictwo w warsztatach:</label><br />
-
-    <input
-      type="radio"
-      id="yes"
-      name="workshopAttendance"
-      [value]="person.workshopAttendance"
-      formControlName="workshopAttendance"
-      checked
-    />
-    <label for="yes">{{ person.workshopAttendance }}</label
-    ><br /><br />
-
-    <label for="description">Dodatkowe uwagi:</label><br />
-    <textarea
-      id="description"
-      name="description"
-      rows="5"
-      cols="40"
-      formControlName="description"
-      [value]="person.description"
-      readonly
-    ></textarea
-    ><br />
-  </form>
+    <div>
+      Uczestnictwo w warsztatach:<br />
+      {{ person.workshopAttendance }}
+    </div>
+    <br />
+    <div>
+      Dodatkowe uwagi:<br />
+      <div class="saved-description">{{ person.description }}</div>
+    </div>
+  </div>
   }
-  <h1>Prelegenci:</h1> <button (click)="fetchForms('speaker')" class="fetch-button">Wygeneruj formularz</button> <br />
+  <h1>Prelegenci:</h1>
+  <button (click)="fetchForms('speaker')" class="fetch-button">
+    Wygeneruj formularz
+  </button>
+  <br />
   @for (speaker of speakerForms; track speaker.firstName){
-  <form class="form">
-    <input
-      type="text"
-      id="name"
-      formControlName="firstName"
-      readonly
-      [value]="speaker.firstName"
-    /><br />
-
-    <input
-      type="text"
-      id="name"
-      formControlName="lastName"
-      readonly
-      [value]="speaker.lastName"
-    /><br />
-
-    <input
-      type="email"
-      id="email"
-      formControlName="email"
-      readonly
-      [value]="speaker.email"
-    /><br /><br />
-    <label for="format">Preferowany format prezentacji:</label><br />
-    <input
-      type="radio"
-      id="online"
-      name="presentationFormat"
-      [value]="speaker.presentationFormat"
-      formControlName="presentationFormat"
-      checked
-    />
-    <label for="online">{{ speaker.presentationFormat }}</label
-    ><br />
-
-    <label for="topic">Obszar tematyczny prezentacji:</label><br />
-    <select id="topic" name="topic" formControlName="topic">
-      <option value="speaker.topic">{{ speaker.topic }}</option>
-    </select>
-    <br /><br />
-
-    <label for="description">Opis prezentacji:</label><br />
-    <textarea
-      id="description"
-      name="description"
-      rows="5"
-      cols="40"
-      formControlName="description"
-      [value]="speaker.description"
-      readonly
-    ></textarea
-    ><br />
-  </form>
+    <div class="form">
+        <div>
+          Imię:<br />
+          <div class="saved-form-input">{{ speaker.firstName }}</div>
+        </div>
+        <br />
+        <div>
+          Nazwisko:<br />
+          <div class="saved-form-input">{{ speaker.lastName }}</div>
+        </div>
+        <br />
+        <div>
+          Adres e-mail:<br />
+          <div class="saved-form-input">{{ speaker.email }}</div>
+        </div>
+        <br />
+        <div>
+          Format prezentacji:<br />
+          <div>{{ speaker.presentationFormat }}</div>
+          <br />
+        </div>
+    
+        <div>
+          Temat prezentacji:<br />
+          {{ speaker.topic }}
+        </div>
+        <br />
+        <div>
+          Dodatkowe uwagi:<br />
+          <div class="saved-description">{{ speaker.description }}</div>
+        </div>
+      </div>
   }
 
-  <h1>Sponsorzy:</h1> <button (click)="fetchForms('sponsor')" class="fetch-button">Wygeneruj formularz</button> <br />
+  <h1>Sponsorzy:</h1>
+  <button (click)="fetchForms('sponsor')" class="fetch-button">
+    Wygeneruj formularz
+  </button>
+  <br />
   @for (sponsor of sponsorForms; track sponsor.companyName){
-  <form class="form">
-    <input
-      type="text"
-      id="name"
-      formControlName="companyName"
-      placeholder="Nazwa firmy"
-      [value]="sponsor.companyName"
-      readonly
-    /><br />
-
-    <input
-      type="email"
-      id="email"
-      formControlName="email"
-      placeholder="Adres e-mail"
-      [value]="sponsor.email"
-      readonly
-    /><br /><br />
-
-    <label for="promotion">Preferowany sposób promocji:</label><br />
-    <select id="promotion" name="promotion" formControlName="promotionType">
-      <option value="sponsor.promotionType">
-        {{ sponsor.promotionType }}
-      </option></select
-    ><br /><br />
-
-    <label for="time">Ile dni ma trwać promocja? (maksymalnie 3 dni):</label
-    ><br />
-    <input
-      type="number"
-      id="time"
-      name="time"
-      min="1"
-      max="3"
-      formControlName="promotionTime"
-      [value]="sponsor.promotionTime"
-      readonly
-    /><br /><br />
-    <label for="description">Dodatkowe uwagi:</label><br />
-
-    <textarea
-      id="description"
-      name="description"
-      rows="5"
-      cols="40"
-      formControlName="description"
-      [value]="sponsor.description"
-      readonly
-    ></textarea
-    ><br />
-  </form>
+    <div class="form">
+        <div>
+          Imię:<br />
+          <div class="saved-form-input">{{ sponsor.companyName }}</div>
+        </div>
+        <br />
+        <div>
+          Adres e-mail:<br />
+          <div class="saved-form-input">{{ sponsor.email }}</div>
+        </div>
+        <br />
+        <div>
+          Preferowany sposób promocji:<br />
+          <div>{{ sponsor.promotionType }}</div>
+          <br />
+        </div>
+    
+        <div>
+          Czas trwania promocji:<br />
+          {{ sponsor.promotionTime }} {{ sponsor.promotionTime == 1 ? 'dzień' : 'dni' }}
+        </div>
+        <br />
+        <div>
+          Dodatkowe uwagi:<br />
+          <div class="saved-description">{{ sponsor.description }}</div>
+        </div>
+      </div>
   }
 </div>

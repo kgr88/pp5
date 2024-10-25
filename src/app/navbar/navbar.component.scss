@@ -1,0 +1,29 @@
+#navbar {
+  display: flex;
+  margin: -8px;
+  margin-bottom: 8px;
+  background-color: #221f21;
+}
+
+#navbar a {
+  text-decoration: none;
+}
+
+.navbar-icon {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.navbar-element {
+  padding: 1rem;
+  border-bottom: solid #221f21 2px;
+  max-width: 8rem;
+  text-align: center;
+  color: #ccc4cc;
+  font-family: Roboto;
+}
+
+.navbar-element:hover {
+  border-bottom: solid white 2px;
+}

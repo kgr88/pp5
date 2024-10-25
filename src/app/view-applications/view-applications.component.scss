@@ -1,20 +1,45 @@
-.fetch-button{
-    border-radius: 2rem;
-    width: 8rem;
-    border: none;
-    padding: 1rem 1rem;
-    margin: 0.5rem 0;
-    background-color: #3c393b;
-    color: #ccc4cc;
-    font-family: Roboto;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+.fetch-button {
+  border-radius: 2rem;
+  width: 8rem;
+  border: none;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: #3c393b;
+  color: #ccc4cc;
+  font-family: Roboto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.fetch-button:hover{
-    background-color:#464646;
+.fetch-button:hover {
+  background-color: #464646;
 }
 
-.fetch-button:active{
-    background-color: #757575;
-    transition: all 2s ease-out;
+.fetch-button:active {
+  background-color: #757575;
+  transition: all 2s ease-out;
 }
+
+.saved-form-input {
+  background-color: #3c393b;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  width: auto;
+  display: inline-block;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  min-width: 12rem;
+}
+
+.saved-description {
+  background-color: #3c393b;
+  color: #ccc4cc;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin: 0.25rem 0;
+  width: 40ch; /* Approximate width based on cols */
+  height: 6rem;
+}
+
