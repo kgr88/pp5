@@ -1,0 +1,159 @@
+<div>
+  <h1>Uczestnicy:</h1>
+  @for (person of participantForms; track person.firstName){
+  <form class="form">
+    <input
+      type="text"
+      id="name"
+      formControlName="firstName"
+      placeholder="Imię"
+      [value]="person.firstName"
+      readonly
+    /><br />
+
+    <input
+      type="text"
+      id="name"
+      formControlName="lastName"
+      [value]="person.lastName"
+      readonly
+    /><br />
+
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="Adres e-mail"
+      [value]="person.email"
+      readonly
+    /><br />
+    <br />
+
+    <label for="ticket">Typ biletu:</label><br />
+    <select id="ticket" name="ticket" formControlName="ticketType">
+      <option [value]="person.ticketType">
+        {{ person.ticketType }}
+      </option></select
+    ><br /><br />
+
+    <label>Uczestnictwo w warsztatach:</label><br />
+
+    <input
+      type="radio"
+      id="yes"
+      name="workshopAttendance"
+      [value]="person.workshopAttendance"
+      formControlName="workshopAttendance"
+      checked
+    />
+    <label for="yes">{{ person.workshopAttendance }}</label
+    ><br />
+  </form>
+  <h1>Prelegenci:</h1>
+  } @for (speaker of speakerForms; track speaker.firstName){
+  <form class="form">
+    <input
+      type="text"
+      id="name"
+      formControlName="firstName"
+      readonly
+      [value]="speaker.firstName"
+    /><br />
+
+    <input
+      type="text"
+      id="name"
+      formControlName="lastName"
+      readonly
+      [value]="speaker.lastName"
+    /><br />
+
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      readonly
+      [value]="speaker.email"
+    /><br /><br />
+    <label for="format">Preferowany format prezentacji:</label><br />
+    <input
+      type="radio"
+      id="online"
+      name="presentationFormat"
+      [value]="speaker.presentationFormat"
+      formControlName="presentationFormat"
+      checked
+    />
+    <label for="online">{{ speaker.presentationFormat }}</label
+    ><br />
+
+    <label for="topic">Obszar tematyczny prezentacji:</label><br />
+    <select id="topic" name="topic" formControlName="topic">
+      <option value="speaker.topic">{{ speaker.topic }}</option>
+    </select>
+    <br /><br />
+
+    <label for="description">Opis prezentacji:</label><br />
+    <textarea
+      id="description"
+      name="description"
+      rows="5"
+      cols="40"
+      formControlName="description"
+      [value]="speaker.description"
+    ></textarea
+    ><br />
+  </form>
+  }
+  
+  <h1>Sponsorzy:</h1>
+  @for (sponsor of sponsorForms; track sponsor.companyName){
+  <form class="form">
+    <input
+      type="text"
+      id="name"
+      formControlName="companyName"
+      placeholder="Nazwa firmy"
+      [value]="sponsor.companyName"
+    /><br />
+
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="Adres e-mail"
+      [value]="sponsor.email"
+    /><br /><br />
+
+    <label for="promotion">Preferowany sposób promocji:</label><br />
+    <select id="promotion" name="promotion" formControlName="promotionType">
+      <option value="sponsor.promotionType">
+        {{ sponsor.promotionType }}
+      </option></select
+    ><br /><br />
+
+    <label for="time">Ile dni ma trwać promocja? (maksymalnie 3 dni):</label
+    ><br />
+    <input
+      type="number"
+      id="time"
+      name="time"
+      min="1"
+      max="3"
+      formControlName="promotionTime"
+      [value]="sponsor.promotionTime"
+    /><br /><br />
+    <label for="description">Dodatkowe uwagi:</label><br />
+
+    <textarea
+      id="description"
+      name="description"
+      rows="5"
+      cols="40"
+      formControlName="description"
+      [value]="sponsor.description"
+    ></textarea
+    ><br />
+  </form>
+  }
+</div>

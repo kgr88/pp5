@@ -1,0 +1,52 @@
+<form [formGroup]="participantForm" (ngSubmit)="handleSubmit()" class="form">
+  <input
+    type="text"
+    id="name"
+    formControlName="firstName"
+    placeholder="Imię"
+  /><br />
+
+  <input
+    type="text"
+    id="name"
+    formControlName="lastName"
+    placeholder="Nazwisko"
+  /><br />
+
+  <input
+    type="email"
+    id="email"
+    formControlName="email"
+    placeholder="Adres e-mail"
+  /><br /><br />
+
+  <label for="ticket">Wybierz typ biletu:</label><br />
+  <select id="ticket" name="ticket" formControlName="ticketType">
+    <option value="Standard">Standardowy</option>
+    <option value="VIP">VIP</option>
+    <option value="Student">Studencki</option></select
+  ><br /><br />
+
+  <label>Chcesz uczestniczyć w warsztatach?</label><br />
+  <input
+    type="radio"
+    id="yes"
+    name="workshopAttendance"
+    value="Tak"
+    formControlName="workshopAttendance"
+  />
+  <label for="yes">Tak</label><br />
+  <input
+    type="radio"
+    id="no"
+    name="workshopAttendance"
+    value="Nie"
+    formControlName="workshopAttendance"
+  />
+  <label for="no">Nie</label><br />
+  <br />
+
+  <input type="checkbox" id="terms" name="terms" formControlName="tosConsent" />
+  <label for="terms">Akceptuję regulamin i politykę prywatności</label><br />
+  <input type="submit" value="Zarejestruj się" />
+</form>

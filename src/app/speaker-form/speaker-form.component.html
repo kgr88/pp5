@@ -1,0 +1,60 @@
+<form [formGroup]="speakerForm" (ngSubmit)="handleSubmit()" class="form">
+  <input
+    type="text"
+    id="name"
+    formControlName="firstName"
+    placeholder="Imię"
+  /><br />
+
+  <input
+    type="text"
+    id="name"
+    formControlName="lastName"
+    placeholder="Nazwisko"
+  /><br />
+
+  <input
+    type="email"
+    id="email"
+    formControlName="email"
+    placeholder="Adres e-mail"
+  /><br /><br />
+  <label for="format">Preferowany format prezentacji:</label><br />
+  <input
+    type="radio"
+    id="online"
+    name="presentationFormat"
+    value="online"
+    formControlName="presentationFormat"
+  />
+  <label for="online">Online</label><br />
+  <input
+    type="radio"
+    id="offline"
+    name="presentationFormat"
+    value="offline"
+    formControlName="presentationFormat"
+  />
+  <label for="offline">Offline</label><br /><br />
+
+  <label for="topic">Obszar tematyczny prezentacji:</label><br />
+  <select id="topic" name="topic" formControlName="topic">
+    <option value="Technologia">Technologia</option>
+    <option value="Biznes">Biznes</option>
+    <option value="Marketing">Marketing</option></select
+  ><br /><br />
+
+  <label for="description">Opis prezentacji:</label><br />
+  <textarea
+    id="description"
+    name="description"
+    rows="5"
+    cols="40"
+    formControlName="description"
+  ></textarea
+  ><br />
+
+  <input type="checkbox" id="terms" name="terms" formControlName="tosConsent" />
+  <label for="terms">Akceptuję regulamin i politykę prywatności</label><br />
+  <input type="submit" value="Zarejestruj się" />
+</form>

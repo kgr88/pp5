@@ -1,1 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+#navbar {
+    display: flex;
+    margin: -8px;
+    margin-bottom: 8px;
+    background-color: #221f21;
+    text-decoration: none;
+}
+
+#navbar a {
+    text-decoration: none;
+}
+
+.navbar-icon {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.navbar-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-bottom: solid #221f21 2px;
+    max-width: 8rem;
+    text-align: center;
+    color: #ccc4cc;
+    font-family: Roboto;
+}
+
+.navbar-element:hover {
+    border-bottom: solid white 2px;
+}
+
+body {
+    background-color: #141314;
+    color: #ccc4cc;
+    font-family: Roboto;
+}
+
+.form{
+    background-color: #221f21;
+    border-radius: 1rem;
+    padding: 0.75rem;
+    display: inline-block;
+    margin: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+input{
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: #3c393b;
+    color: #ccc4cc;
+    font-family: Roboto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+select{
+    background-color: #3c393b;
+    color: #ccc4cc;
+    margin: 0.5rem 0;
+}
+
+#yes, #no, #terms, #offline, #online{
+    margin-right: 0.25rem;
+}
+
+#description{
+    background-color: #3c393b;
+    color: #ccc4cc;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    margin: 0.25rem 0;
+}
