@@ -1,8 +1,10 @@
+@use '../../utilities/variables' as v;
+
 #navbar {
   display: flex;
   margin: -8px;
   margin-bottom: 8px;
-  background-color: #221f21;
+  background-color: v.$nav-background-color;
 }
 
 #navbar a {
@@ -17,11 +19,11 @@
 
 .navbar-element {
   padding: 1rem;
-  border-bottom: solid #221f21 2px;
+  border-bottom: solid v.$nav-background-color 2px;
   max-width: 8rem;
   text-align: center;
-  color: #ccc4cc;
-  font-family: Roboto;
+  color: v.$text-color;
+  font-family: v.$font-family;
 }
 
 .navbar-element:hover {
