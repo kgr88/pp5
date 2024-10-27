@@ -1,26 +1,5 @@
 @use '../../utilities/variables' as v;
 
-.fetch-button {
-  border-radius: 2rem;
-  width: 8rem;
-  border: none;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  background-color: v.$input-background-color;
-  color: v.$text-color;
-  font-family: v.$font-family;
-  box-shadow: v.$box-shadow;
-}
-
-.fetch-button:hover {
-  background-color: v.$button-hover-background-color;
-}
-
-.fetch-button:active {
-  background-color: v.$button-active-background-color;
-  transition: all 2s ease-out;
-}
-
 .saved-form-input {
   background-color: v.$input-background-color;
   border-radius: 1rem;
