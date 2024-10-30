@@ -1,9 +1,5 @@
 <div>
   <h1>Uczestnicy:</h1>
-  <button (click)="fetchForms('participant')" class="fetch-button">
-    Wygeneruj formularz
-  </button>
-  <br />
   @for (person of participantForms; track person.firstName){
   <div class="form">
     <div>
@@ -39,10 +35,6 @@
   </div>
   }
   <h1>Prelegenci:</h1>
-  <button (click)="fetchForms('speaker')" class="fetch-button">
-    Wygeneruj formularz
-  </button>
-  <br />
   @for (speaker of speakerForms; track speaker.firstName){
     <div class="form">
         <div>
@@ -79,10 +71,6 @@
   }
 
   <h1>Sponsorzy:</h1>
-  <button (click)="fetchForms('sponsor')" class="fetch-button">
-    Wygeneruj formularz
-  </button>
-  <br />
   @for (sponsor of sponsorForms; track sponsor.companyName){
     <div class="form">
         <div>

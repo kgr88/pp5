@@ -1,5 +1,5 @@
 <form [formGroup]="sponsorForm" (ngSubmit)="handleSubmit()" class="form">
-  <label for="name">Nazwa firmy:</label><br />
+  <label for="name">Nazwa firmy: *</label><br />
   <input
     type="text"
     id="name"
@@ -8,7 +8,7 @@
     aria-required="true"
   /><br />
 
-  <label for="email">Adres e-mail:</label><br />
+  <label for="email">Adres e-mail: *</label><br />
   <input
     type="email"
     id="email"
@@ -17,7 +17,7 @@
     aria-required="true"
   /><br /> <br />
 
-  <label for="promotion">Preferowany sposób promocji:</label><br />
+  <label for="promotion">Preferowany sposób promocji: *</label><br />
   <select id="promotion" name="promotion" formControlName="promotionType" aria-required="true">
     <option value="Banery reklamowe">Banery reklamowe</option>
     <option value="Media społecznościowe">Media społecznościowe</option>
@@ -26,7 +26,7 @@
     </option></select
   ><br /><br />
 
-  <label for="time">Ile dni ma trwać promocja? (maksymalnie 3 dni):</label
+  <label for="time">Ile dni ma trwać promocja? (maksymalnie 3 dni): *</label
   ><br />
   <input
     type="number"
@@ -38,7 +38,7 @@
     aria-required="true"
   /><br /><br />
 
-  <label for="description">Dodatkowe uwagi:</label><br />
+  <label for="description">Dodatkowe uwagi: </label><br />
   <textarea
     id="description"
     name="description"
@@ -49,6 +49,7 @@
   ><br />
 
   <input type="checkbox" id="terms" name="terms" formControlName="tosConsent" aria-required="true"/>
-  <label for="terms">Akceptuję regulamin i politykę prywatności</label><br />
+  <label for="terms">Akceptuję regulamin i politykę prywatności *</label><br />
   <input type="submit" value="Zarejestruj się" />
+  <div class="note">*wymagane</div> 
 </form>

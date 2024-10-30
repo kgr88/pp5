@@ -1,5 +1,5 @@
 <form [formGroup]="speakerForm" (ngSubmit)="handleSubmit()" class="form">
-  <label for="firstName">Imię</label> <br />
+  <label for="firstName">Imię: *</label> <br />
   <input
     type="text"
     id="firstName"
@@ -9,7 +9,7 @@
   />
   <br />
 
-  <label for="lastName">Nazwisko</label> <br />
+  <label for="lastName">Nazwisko: *</label> <br />
   <input
     type="text"
     id="lastName"
@@ -19,7 +19,7 @@
   />
   <br />
 
-  <label for="email">Adres e-mail</label> <br />
+  <label for="email">Adres e-mail: *</label> <br />
   <input
     type="email"
     id="email"
@@ -30,7 +30,7 @@
   <br />
   
   <fieldset aria-required="true">
-    <legend>Preferowany format prezentacji:</legend>
+    <legend>Preferowany format prezentacji: *</legend>
     <div>
       <input
         type="radio"
@@ -54,7 +54,7 @@
   </fieldset>
   <br />
 
-  <label for="topic">Obszar tematyczny prezentacji:</label> <br />
+  <label for="topic">Obszar tematyczny prezentacji: *</label> <br />
   <select id="topic" name="topic" formControlName="topic" aria-required="true">
     <option value="Technologia">Technologia</option>
     <option value="Biznes">Biznes</option>
@@ -62,7 +62,7 @@
   </select>
   <br />
 
-  <label for="description">Opis prezentacji:</label> <br />
+  <label for="description">Opis prezentacji: *</label> <br />
   <textarea
     id="description"
     name="description"
@@ -81,6 +81,7 @@
     aria-required="true"
   />
 
-  <label for="terms">Akceptuję regulamin i politykę prywatności</label> <br />
+  <label for="terms">Akceptuję regulamin i politykę prywatności *</label> <br />
   <input type="submit" value="Zarejestruj się" />
+  <div class="note">*wymagane</div> 
 </form>

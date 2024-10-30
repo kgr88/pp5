@@ -1,5 +1,5 @@
 <form [formGroup]="participantForm" (ngSubmit)="handleSubmit()" class="form">
-  <label for="firstName">Imię:</label><br />
+  <label for="firstName">Imię: *</label><br />
   <input
     type="text"
     id="firstName"
@@ -8,7 +8,7 @@
     aria-required="true"
   /><br /><br />
 
-  <label for="lastName">Nazwisko:</label><br />
+  <label for="lastName">Nazwisko: *</label><br />
   <input
     type="text"
     id="lastName"
@@ -17,7 +17,7 @@
     aria-required="true"
   /><br /><br />
 
-  <label for="email">Adres e-mail:</label><br />
+  <label for="email">Adres e-mail: *</label><br />
   <input
     type="email"
     id="email"
@@ -26,15 +26,20 @@
     aria-required="true"
   /><br /><br />
 
-  <label for="ticket">Wybierz typ biletu:</label><br />
-  <select id="ticket" name="ticket" formControlName="ticketType" aria-required="true">
+  <label for="ticket">Wybierz typ biletu: *</label><br />
+  <select
+    id="ticket"
+    name="ticket"
+    formControlName="ticketType"
+    aria-required="true"
+  >
     <option value="Standardowy">Standardowy</option>
     <option value="VIP">VIP</option>
-    <option value="Studencki">Studencki</option>
-  </select><br /><br />
+    <option value="Studencki">Studencki</option></select
+  ><br /><br />
 
   <fieldset aria-required="true">
-    <legend>Chcesz uczestniczyć w warsztatach?</legend>
+    <legend>Chcesz uczestniczyć w warsztatach?: *</legend>
     <input
       type="radio"
       id="yes"
@@ -61,9 +66,17 @@
     rows="5"
     cols="40"
     formControlName="description"
-  ></textarea><br />
+  ></textarea
+  ><br />
 
-  <input type="checkbox" id="terms" name="terms" formControlName="tosConsent" aria-required="true" />
-  <label for="terms">Akceptuję regulamin i politykę prywatności</label><br />
+  <input
+    type="checkbox"
+    id="terms"
+    name="terms"
+    formControlName="tosConsent"
+    aria-required="true"
+  />
+  <label for="terms">Akceptuję regulamin i politykę prywatności *</label><br />
   <input type="submit" value="Zarejestruj się" />
+  <div class="note">*wymagane</div> 
 </form>

@@ -69,3 +69,8 @@ select {
   background-color: v.$button-active-background-color;
   transition: all 2s ease-out;
 }
+
+.note{
+  font-size: 0.75rem;
+  color: rgb(255, 172, 172);
+}

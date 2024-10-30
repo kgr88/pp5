@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -21,18 +22,23 @@ export class SpeakerFormComponent {
     tosConsent: new FormControl('', Validators.required),
   });
  
+  constructor(private http: HttpClient) {}
+
   handleSubmit(): void {
     if (!this.speakerForm.valid) {
-      console.log(this.speakerForm, this.speakerForm.valid)
-      alert('Wypełnij poprawnie wszystkie pola!');
+      alert('Wypełnij/zaznacz poprawnie wszystkie wymagane pola!');
       return;
     }
     const formData: any = this.speakerForm.value;
-    const speakerForms: any = JSON.parse(
-      localStorage.getItem('speakerForms') || '[]'
-    );
-    speakerForms.push(formData);
-    localStorage.setItem('speakerForms', JSON.stringify(speakerForms));
-    alert('Dziękujemy za wypełnienie formularza!');
+    formData.type = 'speaker';
+    this.http
+      .post('http://localhost:3000/submit-form', formData)
+      .subscribe((res: any) => {
+        if (res.result) {
+          alert('Dziękujemy za wypełnienie formularza!');
+        } else {
+          alert('Wystąpił błąd');
+        }
+      });
   }
 }

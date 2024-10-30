@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 interface SponsorFormData {
   companyName: string;
@@ -32,18 +33,23 @@ export class SponsorFormComponent {
     tosConsent: new FormControl('', Validators.required),
   });
 
+  constructor(private http: HttpClient) {}
+
   handleSubmit(): void {
     if (!this.sponsorForm.valid) {
-      console.log(this.sponsorForm, this.sponsorForm.valid);
-      alert('Wypełnij poprawnie wszystkie pola!');
+      alert('Wypełnij/zaznacz poprawnie wszystkie wymagane pola!');
       return;
     }
     const formData: any = this.sponsorForm.value;
-    const sponsorForm: any = JSON.parse(
-      localStorage.getItem('sponsorForms') || '[]'
-    );
-    sponsorForm.push(formData);
-    localStorage.setItem('sponsorForms', JSON.stringify(sponsorForm));
-    alert('Dziękujemy za wypełnienie formularza!');
+    formData.type = 'sponsor';
+    this.http
+      .post('http://localhost:3000/submit-form', formData)
+      .subscribe((res: any) => {
+        if (res.result) {
+          alert('Dziękujemy za wypełnienie formularza!');
+        } else {
+          alert('Wystąpił błąd');
+        }
+      });
   }
 }

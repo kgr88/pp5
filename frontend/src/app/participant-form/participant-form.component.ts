@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-participant-form',
@@ -20,17 +25,23 @@ export class ParticipantFormComponent {
     description: new FormControl(''),
   });
 
-  handleSubmit():void {
+  constructor(private http: HttpClient) {}
+
+  handleSubmit(): void {
     if (!this.participantForm.valid) {
-      alert('Wypełnij poprawnie wszystkie pola!');
+      alert('Wypełnij/zaznacz poprawnie wszystkie wymagane pola!');
       return;
     }
     const formData: any = this.participantForm.value;
-    const participantForms: any = JSON.parse(
-      localStorage.getItem('participantForms') || '[]'
-    );
-    participantForms.push(formData);
-    localStorage.setItem('participantForms', JSON.stringify(participantForms));
-    alert('Dziękujemy za wypełnienie formularza!');
+    formData.type = 'participant';
+    this.http
+      .post('http://localhost:3000/submit-form', formData)
+      .subscribe((res: any) => {
+        if (res.result) {
+          alert('Dziękujemy za wypełnienie formularza!');
+        } else {
+          alert('Wystąpił błąd');
+        }
+      });
   }
 }
