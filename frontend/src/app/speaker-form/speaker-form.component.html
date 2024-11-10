@@ -1,60 +1,34 @@
 <form [formGroup]="speakerForm" (ngSubmit)="handleSubmit()" class="form">
-  <label for="firstName">Imię: *</label> <br />
-  <input
-    type="text"
-    id="firstName"
-    formControlName="firstName"
-    placeholder="Imię"
-    aria-required="true"
-  />
+  <label for="firstName">Imię: *</label>
+  <br />
+  <input type="text" id="firstName" formControlName="firstName" placeholder="Imię" aria-required="true" />
   <br />
 
-  <label for="lastName">Nazwisko: *</label> <br />
-  <input
-    type="text"
-    id="lastName"
-    formControlName="lastName"
-    placeholder="Nazwisko"
-    aria-required="true"
-  />
+  <label for="lastName">Nazwisko: *</label>
+  <br />
+  <input type="text" id="lastName" formControlName="lastName" placeholder="Nazwisko" aria-required="true" />
   <br />
 
-  <label for="email">Adres e-mail: *</label> <br />
-  <input
-    type="email"
-    id="email"
-    formControlName="email"
-    placeholder="Adres e-mail"
-    aria-required="true"
-  />
+  <label for="email">Adres e-mail: *</label>
   <br />
-  
+  <input type="email" id="email" formControlName="email" placeholder="Adres e-mail" aria-required="true" />
+  <br />
+
   <fieldset aria-required="true">
     <legend>Preferowany format prezentacji: *</legend>
     <div>
-      <input
-        type="radio"
-        id="online"
-        name="presentationFormat"
-        value="online"
-        formControlName="presentationFormat"
-      />
+      <input type="radio" id="online" name="presentationFormat" value="online" formControlName="presentationFormat" />
       <label for="online">Online</label>
     </div>
     <div>
-      <input
-        type="radio"
-        id="offline"
-        name="presentationFormat"
-        value="offline"
-        formControlName="presentationFormat"
-      />
+      <input type="radio" id="offline" name="presentationFormat" value="offline" formControlName="presentationFormat" />
       <label for="offline">Offline</label>
     </div>
   </fieldset>
   <br />
 
-  <label for="topic">Obszar tematyczny prezentacji: *</label> <br />
+  <label for="topic">Obszar tematyczny prezentacji: *</label>
+  <br />
   <select id="topic" name="topic" formControlName="topic" aria-required="true">
     <option value="Technologia">Technologia</option>
     <option value="Biznes">Biznes</option>
@@ -62,26 +36,21 @@
   </select>
   <br />
 
-  <label for="description">Opis prezentacji: *</label> <br />
+  <label for="description">Opis prezentacji: *</label>
+  <br />
   <textarea
     id="description"
     name="description"
     rows="5"
     cols="40"
     formControlName="description"
-    aria-required="true"
-  ></textarea>
+    aria-required="true"></textarea>
   <br />
 
-  <input
-    type="checkbox"
-    id="terms"
-    name="terms"
-    formControlName="tosConsent"
-    aria-required="true"
-  />
+  <input type="checkbox" id="terms" name="terms" formControlName="tosConsent" aria-required="true" />
 
-  <label for="terms">Akceptuję regulamin i politykę prywatności *</label> <br />
+  <label for="terms">Akceptuję regulamin i politykę prywatności *</label>
+  <br />
   <input type="submit" value="Zarejestruj się" />
-  <div class="note">*wymagane</div> 
+  <div class="note">*wymagane</div>
 </form>

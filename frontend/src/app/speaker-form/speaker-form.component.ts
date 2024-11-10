@@ -3,7 +3,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-speaker-form',
   standalone: true,
@@ -18,10 +17,10 @@ export class SpeakerFormComponent {
     email: new FormControl('', Validators.required),
     topic: new FormControl('', Validators.required),
     presentationFormat: new FormControl('online', Validators.required),
-    description: new FormControl('',Validators.required),
+    description: new FormControl('', Validators.required),
     tosConsent: new FormControl('', Validators.required),
   });
- 
+
   constructor(private http: HttpClient) {}
 
   handleSubmit(): void {
@@ -31,14 +30,12 @@ export class SpeakerFormComponent {
     }
     const formData: any = this.speakerForm.value;
     formData.type = 'speaker';
-    this.http
-      .post('http://localhost:3000/submit-form', formData)
-      .subscribe((res: any) => {
-        if (res.result) {
-          alert('Dziękujemy za wypełnienie formularza!');
-        } else {
-          alert('Wystąpił błąd');
-        }
-      });
+    this.http.post('http://localhost:3000/submit-form', formData).subscribe((res: any) => {
+      if (res.result) {
+        alert('Dziękujemy za wypełnienie formularza!');
+      } else {
+        alert('Wystąpił błąd');
+      }
+    });
   }
 }

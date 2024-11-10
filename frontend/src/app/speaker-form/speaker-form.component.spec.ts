@@ -8,9 +8,8 @@ describe('SpeakerFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SpeakerFormComponent]
-    })
-    .compileComponents();
+      imports: [SpeakerFormComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SpeakerFormComponent);
     component = fixture.componentInstance;

@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -34,14 +29,12 @@ export class ParticipantFormComponent {
     }
     const formData: any = this.participantForm.value;
     formData.type = 'participant';
-    this.http
-      .post('http://localhost:3000/submit-form', formData)
-      .subscribe((res: any) => {
-        if (res.result) {
-          alert('Dziękujemy za wypełnienie formularza!');
-        } else {
-          alert('Wystąpił błąd');
-        }
-      });
+    this.http.post('http://localhost:3000/submit-form', formData).subscribe((res: any) => {
+      if (res.result) {
+        alert('Dziękujemy za wypełnienie formularza!');
+      } else {
+        alert('Wystąpił błąd');
+      }
+    });
   }
 }

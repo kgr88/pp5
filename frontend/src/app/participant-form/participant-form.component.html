@@ -1,38 +1,15 @@
 <form [formGroup]="participantForm" (ngSubmit)="handleSubmit()" class="form">
   <label for="firstName">Imię: *</label><br />
-  <input
-    type="text"
-    id="firstName"
-    formControlName="firstName"
-    placeholder="Imię"
-    aria-required="true"
-  /><br /><br />
+  <input type="text" id="firstName" formControlName="firstName" placeholder="Imię" aria-required="true" /><br /><br />
 
   <label for="lastName">Nazwisko: *</label><br />
-  <input
-    type="text"
-    id="lastName"
-    formControlName="lastName"
-    placeholder="Nazwisko"
-    aria-required="true"
-  /><br /><br />
+  <input type="text" id="lastName" formControlName="lastName" placeholder="Nazwisko" aria-required="true" /><br /><br />
 
   <label for="email">Adres e-mail: *</label><br />
-  <input
-    type="email"
-    id="email"
-    formControlName="email"
-    placeholder="Adres e-mail"
-    aria-required="true"
-  /><br /><br />
+  <input type="email" id="email" formControlName="email" placeholder="Adres e-mail" aria-required="true" /><br /><br />
 
   <label for="ticket">Wybierz typ biletu: *</label><br />
-  <select
-    id="ticket"
-    name="ticket"
-    formControlName="ticketType"
-    aria-required="true"
-  >
+  <select id="ticket" name="ticket" formControlName="ticketType" aria-required="true">
     <option value="Standardowy">Standardowy</option>
     <option value="VIP">VIP</option>
     <option value="Studencki">Studencki</option></select
@@ -40,43 +17,18 @@
 
   <fieldset aria-required="true">
     <legend>Chcesz uczestniczyć w warsztatach?: *</legend>
-    <input
-      type="radio"
-      id="yes"
-      name="workshopAttendance"
-      value="Tak"
-      formControlName="workshopAttendance"
-    />
+    <input type="radio" id="yes" name="workshopAttendance" value="Tak" formControlName="workshopAttendance" />
     <label for="yes">Tak</label><br />
-    <input
-      type="radio"
-      id="no"
-      name="workshopAttendance"
-      value="Nie"
-      formControlName="workshopAttendance"
-    />
+    <input type="radio" id="no" name="workshopAttendance" value="Nie" formControlName="workshopAttendance" />
     <label for="no">Nie</label><br />
   </fieldset>
   <br />
 
   <label for="description">Dodatkowe uwagi:</label><br />
-  <textarea
-    id="description"
-    name="description"
-    rows="5"
-    cols="40"
-    formControlName="description"
-  ></textarea
-  ><br />
+  <textarea id="description" name="description" rows="5" cols="40" formControlName="description"></textarea><br />
 
-  <input
-    type="checkbox"
-    id="terms"
-    name="terms"
-    formControlName="tosConsent"
-    aria-required="true"
-  />
+  <input type="checkbox" id="terms" name="terms" formControlName="tosConsent" aria-required="true" />
   <label for="terms">Akceptuję regulamin i politykę prywatności *</label><br />
   <input type="submit" value="Zarejestruj się" />
-  <div class="note">*wymagane</div> 
+  <div class="note">*wymagane</div>
 </form>

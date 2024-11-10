@@ -16,17 +16,15 @@ export class ViewApplicationsComponent {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(){
-    this.http
-      .get('http://localhost:3000/submitted-forms')
-      .subscribe((res: any) => {
-        if (res.result) {
-          this.participantForms = res.message.participants; 
-          this.speakerForms = res.message.speakers; 
-          this.sponsorForms = res.message.sponsors; 
-        } else {
-          alert('Wystąpił błąd');
-        }
-      });
+  ngOnInit() {
+    this.http.get('http://localhost:3000/submitted-forms').subscribe((res: any) => {
+      if (res.result) {
+        this.participantForms = res.message.participants;
+        this.speakerForms = res.message.speakers;
+        this.sponsorForms = res.message.sponsors;
+      } else {
+        alert('Wystąpił błąd');
+      }
+    });
   }
 }

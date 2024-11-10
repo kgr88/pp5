@@ -1,103 +1,132 @@
 <div>
   <h1>Uczestnicy:</h1>
-  @for (person of participantForms; track person.firstName){
-  <div class="form">
-    <div>
-      Imię:<br />
-      <div class="saved-form-input">{{ person.firstName }}</div>
-    </div>
-    <br />
-    <div>
-      Nazwisko:<br />
-      <div class="saved-form-input">{{ person.lastName }}</div>
-    </div>
-    <br />
-    <div>
-      Adres e-mail:<br />
-      <div class="saved-form-input">{{ person.email }}</div>
-    </div>
-    <br />
-    <div>
-      Typ biletu:<br />
-      <div>{{ person.ticketType }}</div>
-      <br />
-    </div>
-
-    <div>
-      Uczestnictwo w warsztatach:<br />
-      {{ person.workshopAttendance }}
-    </div>
-    <br />
-    <div>
-      Dodatkowe uwagi:<br />
-      <div class="saved-description">{{ person.description }}</div>
-    </div>
-  </div>
-  }
-  <h1>Prelegenci:</h1>
-  @for (speaker of speakerForms; track speaker.firstName){
+  @for (person of participantForms; track person.firstName) {
     <div class="form">
-        <div>
-          Imię:<br />
-          <div class="saved-form-input">{{ speaker.firstName }}</div>
-        </div>
-        <br />
-        <div>
-          Nazwisko:<br />
-          <div class="saved-form-input">{{ speaker.lastName }}</div>
-        </div>
-        <br />
-        <div>
-          Adres e-mail:<br />
-          <div class="saved-form-input">{{ speaker.email }}</div>
-        </div>
-        <br />
-        <div>
-          Format prezentacji:<br />
-          <div>{{ speaker.presentationFormat }}</div>
-          <br />
-        </div>
-    
-        <div>
-          Temat prezentacji:<br />
-          {{ speaker.topic }}
-        </div>
-        <br />
-        <div>
-          Dodatkowe uwagi:<br />
-          <div class="saved-description">{{ speaker.description }}</div>
+      <div>
+        Imię:<br />
+        <div class="saved-form-input">
+          {{ person.firstName }}
         </div>
       </div>
+      <br />
+      <div>
+        Nazwisko:<br />
+        <div class="saved-form-input">
+          {{ person.lastName }}
+        </div>
+      </div>
+      <br />
+      <div>
+        Adres e-mail:<br />
+        <div class="saved-form-input">
+          {{ person.email }}
+        </div>
+      </div>
+      <br />
+      <div>
+        Typ biletu:<br />
+        <div>
+          {{ person.ticketType }}
+        </div>
+        <br />
+      </div>
+
+      <div>
+        Uczestnictwo w warsztatach:<br />
+        {{ person.workshopAttendance }}
+      </div>
+      <br />
+      <div>
+        Dodatkowe uwagi:<br />
+        <div class="saved-description">
+          {{ person.description }}
+        </div>
+      </div>
+    </div>
+  }
+  <h1>Prelegenci:</h1>
+  @for (speaker of speakerForms; track speaker.firstName) {
+    <div class="form">
+      <div>
+        Imię:<br />
+        <div class="saved-form-input">
+          {{ speaker.firstName }}
+        </div>
+      </div>
+      <br />
+      <div>
+        Nazwisko:<br />
+        <div class="saved-form-input">
+          {{ speaker.lastName }}
+        </div>
+      </div>
+      <br />
+      <div>
+        Adres e-mail:<br />
+        <div class="saved-form-input">
+          {{ speaker.email }}
+        </div>
+      </div>
+      <br />
+      <div>
+        Format prezentacji:<br />
+        <div>
+          {{ speaker.presentationFormat }}
+        </div>
+        <br />
+      </div>
+
+      <div>
+        Temat prezentacji:<br />
+        {{ speaker.topic }}
+      </div>
+      <br />
+      <div>
+        Dodatkowe uwagi:<br />
+        <div class="saved-description">
+          {{ speaker.description }}
+        </div>
+      </div>
+    </div>
   }
 
   <h1>Sponsorzy:</h1>
-  @for (sponsor of sponsorForms; track sponsor.companyName){
+  @for (sponsor of sponsorForms; track sponsor.companyName) {
     <div class="form">
-        <div>
-          Imię:<br />
-          <div class="saved-form-input">{{ sponsor.companyName }}</div>
-        </div>
-        <br />
-        <div>
-          Adres e-mail:<br />
-          <div class="saved-form-input">{{ sponsor.email }}</div>
-        </div>
-        <br />
-        <div>
-          Preferowany sposób promocji:<br />
-          <div>{{ sponsor.promotionType }}</div>
-          <br />
-        </div>
-    
-        <div>
-          Czas trwania promocji:<br />
-          {{ sponsor.promotionTime }} {{ sponsor.promotionTime == 1 ? 'dzień' : 'dni' }}
-        </div>
-        <br />
-        <div>
-          Dodatkowe uwagi:<br />
-          <div class="saved-description">{{ sponsor.description }}</div>
+      <div>
+        Imię:<br />
+        <div class="saved-form-input">
+          {{ sponsor.companyName }}
         </div>
       </div>
+      <br />
+      <div>
+        Adres e-mail:<br />
+        <div class="saved-form-input">
+          {{ sponsor.email }}
+        </div>
+      </div>
+      <br />
+      <div>
+        Preferowany sposób promocji:<br />
+        <div>
+          {{ sponsor.promotionType }}
+        </div>
+        <br />
+      </div>
+
+      <div>
+        Czas trwania promocji:<br />
+        {{ sponsor.promotionTime }}
+        {{ sponsor.promotionTime == 1 ? 'dzień' : 'dni' }}
+      </div>
+      <br />
+      <div>
+        Dodatkowe uwagi:<br />
+        <div class="saved-description">
+          {{ sponsor.description }}
+        </div>
+      </div>
+    </div>
   }
 </div>

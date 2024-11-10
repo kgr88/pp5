@@ -24,11 +24,7 @@ export class SponsorFormComponent {
     companyName: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
     promotionType: new FormControl('', Validators.required),
-    promotionTime: new FormControl('1', [
-      Validators.required,
-      Validators.min(1),
-      Validators.max(3),
-    ]),
+    promotionTime: new FormControl('1', [Validators.required, Validators.min(1), Validators.max(3)]),
     description: new FormControl(''),
     tosConsent: new FormControl('', Validators.required),
   });
@@ -42,14 +38,12 @@ export class SponsorFormComponent {
     }
     const formData: any = this.sponsorForm.value;
     formData.type = 'sponsor';
-    this.http
-      .post('http://localhost:3000/submit-form', formData)
-      .subscribe((res: any) => {
-        if (res.result) {
-          alert('Dziękujemy za wypełnienie formularza!');
-        } else {
-          alert('Wystąpił błąd');
-        }
-      });
+    this.http.post('http://localhost:3000/submit-form', formData).subscribe((res: any) => {
+      if (res.result) {
+        alert('Dziękujemy za wypełnienie formularza!');
+      } else {
+        alert('Wystąpił błąd');
+      }
+    });
   }
 }

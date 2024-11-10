@@ -8,9 +8,8 @@ describe('SponsorFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SponsorFormComponent]
-    })
-    .compileComponents();
+      imports: [SponsorFormComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SponsorFormComponent);
     component = fixture.componentInstance;
